@@ -1,0 +1,120 @@
+// VARIABLES
+@import "lib/variables.scss";
+
+nav#menu {
+    background: linear-gradient(to bottom, rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 100%);
+    height: $spacefix*4;
+    color: $white;
+    text-transform: uppercase;
+    ul {
+        height: $spacefix*4;
+        line-height: $spacefix*4;
+        padding: 0 $spacefix;
+        li {
+            position: relative;
+            display: inline;
+            font-weight: 700;
+            letter-spacing: -.025em;
+            i {
+                opacity: .25;
+                width: 10px;
+                text-align: center;
+            }
+            > ul {
+                position: absolute;
+                left: 0;
+                top: $spacefix*1.5;
+                padding: 0;
+                display: none;
+                li {
+                    display: block;
+                    white-space: nowrap;
+                    padding: $spacefix/4 0;
+                    a {
+                        text-shadow: 0 0 3px #999;
+                    }
+                }
+            }
+            a {
+                padding: $spacefix/4 $spacefix/3;
+            }
+            .active {
+                background: yellow;
+                color: $dark;
+                border-radius: 1px;
+            }
+        }
+        li.logo {
+            background: url('../assets/logo-head.svg') no-repeat center;
+            display: inline-block;
+            float: left;
+            height: 100%;
+            width: 13vw;
+            margin: 0 $spacefix/2 0 0;
+        }
+    }
+    ul.nav {
+        float: left;
+        width: 70%;
+    }
+    ul.social {
+        float: right;
+        li {
+
+            a {
+                i {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen
+and (max-width : 980px)
+and (orientation: portrait) {
+
+    body {
+        font-size: 90%;
+    }
+
+}
+
+
+//iPhone Landscape
+@media only screen
+and (max-width : 568px)
+and (orientation: landscape) {
+
+    body {
+        font-size: 90%;
+    }
+    nav#menu {
+        ul.nav {
+
+            li.logo {
+                width: 9vw;
+            }
+        }
+    }
+}
+
+
+//iPhone Portrait
+@media only screen
+and (max-width : 320px)
+and (orientation: portrait) {
+
+    body {
+
+    }
+    nav#menu {
+        ul.nav {
+            width: 100%;
+        }
+        ul.social {
+            display: none;
+        }
+    }
+}

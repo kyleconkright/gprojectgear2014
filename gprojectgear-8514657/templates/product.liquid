@@ -1,0 +1,71 @@
+<div id="product">
+
+  <div id="product-top">
+    <ul id="product-gallery">
+      {% for image in product.images %}
+        {% if image.alt == 'gallery' %}<li style="background: url('{{ image | product_img_url: '2048x2048'}}') center no-repeat; background-size: cover;" />{% endif %}</li>
+      {% endfor %} 
+    </ul><!--end product slider-->
+
+    <ul id="product-thumbs">
+      {% for image in product.images %}
+        {% if image.alt == 'gallery' %}<li><a href=#"><img src="{{ image | product_img_url: 'thumb' }}" alt="{{ image.alt | escape }}" /></a></li>{% endif %}
+      {% endfor %} 
+    </ul><!--end product slider-->
+
+        <div class="holder">
+
+        <div id="product-info">
+
+          <div id="name-description">
+          <h3>{{ product.title }}</h3>
+          {{ product.description }}
+          </div>
+
+          <div id="buy">
+          <h3>&nbsp;</h3>
+
+          <ul id="support-list">
+            <li><h3>{{ product.price | money }}</h3></li>
+            <li><a href="#"><img src="{{ 'download.png' | asset_url }}"> Manual</a></li>
+            <li><a href="https://gproject.desk.com"><img src="{{ 'support.png' | asset_url }}"> Support</a></li>
+          </ul>
+
+          <ul id="purchase-list">
+
+            <li class="buy-form">
+              <form action="/cart/add" method="post" id="buy-button">
+                {% if product.variants.size !=1 %}
+                  <select id="variant-select" name="id" class="product-info-options">
+                    {% for variant in product.variants %}
+                      <option value="{{ variant.id }}">{{ variant.title }}</option>
+                    {% endfor %}
+                  </select> 
+                {% else %}
+                  {% for variant in product.variants %}
+                    <input type="hidden" id="variant-select" name="id" value="{{ variant.id }}" />
+                  {% endfor %}
+                {% endif %}
+              <input type="submit" value="Add to cart" id="addtocart" class="btn" />
+              </form>
+            </li>
+            
+            <li><a href="http://soundfreaq.com/where_to_buy-NA.htm" class="find-button">Find it in stores</a></li>
+          </ul>
+
+          </div><!--end buy section-->
+
+        </div><!--end product-info-->  
+
+    </div><!--end holder-->
+
+  </div><!--end product-top-->
+
+</div><!--end product-->
+
+{% include'features-ggrip' %}
+
+
+
+
+

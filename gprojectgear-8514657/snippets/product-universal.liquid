@@ -1,0 +1,86 @@
+  <div id="product-top">
+    <ul id="product-gallery">
+      {% for image in product.images %}
+        {% if image.alt == 'gallery' %}<li style="background: url('{{ image | product_img_url: '2048x2048'}}') center no-repeat; background-size: cover;" />{% endif %}</li>
+      {% endfor %} 
+    </ul><!--end product slider-->
+
+    <ul id="product-thumbs">
+      {% for image in product.images %}
+        {% if image.alt == 'gallery' %}<li><a href="#" style="background: url({{ image | product_img_url: 'small' }}) center no-repeat; background-size: cover;"></a></li>{% endif %}
+      {% endfor %} 
+    </ul><!--end product slider-->
+
+        <div class="holder">
+
+        <div id="product-info">
+
+          <div id="name-description">
+          <h4>{{ product.title }}</h4>
+          {{ product.description }}
+          {% if product.title == 'G-ZIP' %}
+            <a href="../products/g-pop" class="well">Click here to see <strong>G-POP</strong>, the wireless fun-sized speaker</a>
+          {% elsif product.title == 'G-POP' %}
+            <a href="../products/g-zip" class="well">Click here to see <strong>G-ZIP</strong>, the line-in fun-sized speaker</a>  
+          {% endif %}
+          </div>
+
+          <div id="action">
+
+          <ul id="support-list">
+            <h3>&nbsp;</h3>
+            <li><h4>{{ product.price | money }}</h4></li>
+            {% if product.type == 'Speaker' %}
+            <li><a href="http://media.gprojectgear.com/userguide/{{ product.title | downcase }}_qsg.pdf"><i class="fa fa-book"></i> Manual</a></li>
+            <li><a href="http://g-project.desk.com"><i class="fa fa-comments"></i> Support</a></li>
+            {% elsif product.type == 'Apparel' %}
+            <li><a href="mailto:support@gprojectgear.com"><i class="fa fa-comments"></i> Support</a></li>
+            <li><a href="http://cdn.gprojectgear.com/size-guide.pdf"><i class="fa fa-file-text-o"></i> Size Guide</a></li>
+            {% endif %}
+            
+          </ul>
+
+          <ul id="purchase-list">
+
+            <li class="buy-form">
+              {% if product.available %}
+              <!--IF PRODUCT IS IN STOCK-->
+
+              <form action="/cart/add" method="post" id="buy-button">
+                <input type="submit" value="Add to cart" id="addtocart" class="btn" />
+                {% if product.variants.size !=1 %}
+                  <select id="variant-select" name="id" class="product-info-options">
+                    {% for variant in product.variants %}
+                      <option value="{{ variant.id }}">{{ variant.title }}</option>
+                    {% endfor %}
+                  </select> 
+                {% else %}
+                  {% for variant in product.variants %}
+                    <input type="hidden" id="variant-select" name="id" value="{{ variant.id }}" />
+                  {% endfor %}
+                {% endif %}
+              </form>
+              {% assign variant = product.variants.first %}{% if variant.inventory_quantity <= 0 and variant.available and variant.inventory_management != '' %}<p style="text-align: center;">Ships in 1 week</p>{% endif %}
+
+              {% else %}
+              
+              {% endif %}
+            </li>
+            
+            {% if product.type == 'Speaker' %}<li><a class="find-button" href="../pages/where-to-buy" ><i class="fa fa-map-marker"></i> Find it in stores</a></li>{% endif %}
+          </ul>
+
+          <ul id="social">
+            <li><a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none">Tweet</a></li>
+            <a href="http://pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&media={{ product.featured_image | product_img_url: 'compact' | split:'?' | first  }}&description={{ product.title | escape | replace:' ','%20' }}" class="pin-it-button" count-layout="none">Pin It</a></li>
+            <li class="fb-like" data-href="{{shopify.url}}{{like.url}}" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></li>
+
+          </ul>
+
+          </div><!--end action section-->
+
+        </div><!--end product-info-->  
+
+    </div><!--end holder-->
+
+  </div><!--end product-top-->

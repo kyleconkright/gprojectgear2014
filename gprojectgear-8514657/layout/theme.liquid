@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+         <title>{% if template contains 'product' %}G-Project - {{ product.title }} {%else%} G-Project {%endif%}</title>
+        {{ 'style.css' | asset_url | stylesheet_tag }}
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+        {{ content_for_header }}
+    </head>
+    <body>
+
+
+
+        {{ content_for_layout }}
+
+
+
+    {{ 'script.js' | asset_url | script_tag }}
+    {{ 'script-no-grunt.js' | asset_url | script_tag }}
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6966432/750366/css/fonts.css" /> -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <div id="fb-root"></div>
+
+    <!--Pinterest JS-->
+    <script>(function(d){var f=d.getElementsByTagName('SCRIPT')[0],p=d.createElement('SCRIPT');p.type='text/javascript';p.async=true;p.src='//assets.pinterest.com/js/pinit.js';f.parentNode.insertBefore(p,f);}(document));</script>
+    <!--Facebook JS-->
+    <script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="//connect.facebook.net/en_US/all.js#xfbml=1&appId=125678820871454";fjs.parentNode.insertBefore(js,fjs);}(document,'script','facebook-jssdk'));</script>
+    <!--Twitter JS-->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    </body>
+</html>

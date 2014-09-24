@@ -1,0 +1,28 @@
+<nav id="menu">
+
+	<ul class="nav">
+		<li class="logo"></li>
+		<li><a href="#" class="drop">Shop <i class="fa fa-caret-down"></i></a>
+			<ul>
+				{% for product in collections.speakers.products %}
+					<li><a href="{{ product.url }}" title="{{ product.title }}">{{ product.title }}</a></li>
+				{% endfor %}
+			</ul>
+		</li><!--Shop-->
+		<li><a href="#">Support</a></li>
+		<li><a href="#" class="drop">More <i class="fa fa-caret-down"></i></a>
+			<ul>
+				{% for product in collections.speakers.products %}
+					<li><a href="{{ product.url }}" title="{{ product.title }}">{{ product.title }}</a></li>
+				{% endfor %}
+			</ul>
+		</li><!--Drop-->
+	</ul>
+
+	<ul class="social">
+		<li><a href="http://www.twitter.com/gprojectgear" target="_blank"><i class="fa fa-twitter"></i></a></li>
+		<li><a href="http://www.instagram.com/gprojectgear" target="_blank"><i class="fa fa-instagram"></i></a></li>
+		<li><a href="http://www.facebook.com/gprojectgear" target="_blank"><i class="fa fa-facebook"></i></a></li>
+	</ul>
+
+</nav>

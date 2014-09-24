@@ -1,0 +1,57 @@
+<div id="cart" class="holder">
+
+  {% if cart.item_count > 0 %}
+
+  <form action="/cart" method="post" id="cartform">
+    <table>
+      <tr>
+        <th>Product</th>
+        <th></th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Remove?</th>
+        <th class="cart-total">Total</th>
+      </tr>
+
+      {% for item in cart.items %}
+
+      <tr>
+        <td>{% for image in item.product.images %}{% if image.alt == 'icon' %}<li><img src="{{ image | product_img_url: 'thumb' }}">{% endif %}{% endfor %}</td>
+        <td class="cart-title">{{ item.title }}
+          {% if item.product.tags contains 'shirt' %}
+            <p><b>Reminder:</b> Did you make sure to check the <a href="http://cdn.gprojectgear.com/size-guide.pdf" target="_blank">size guide</a>? The shirts are slim fit and it is recommended that you order up 1 or 2 sizes because they will shrink in the dryer. Also to ensure everyone gets a fresh shirt, there are no returns or exchanges on shirts unless they’re defective.</p>
+          {% endif %}
+        </td>
+        <td class="cart-price">{{ item.price | money }}</td>
+        <td class="cart-quantity"><input type="text" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" /></td>
+        <td class="cart-remove"><a href="/cart/change?line={{ forloop.index }}&quantity=0" class="remove-glyph" title="remove"><img src="{{ 'x.png' | asset_url }}"></a></td>
+        <td class="cart-total">{{ item.line_price | money }}</td>
+      </tr>
+
+      {% endfor %}
+      
+      <tr>
+        <td colspan="6" style="text-align: right;">Subtotal <strong>{{ cart.total_price | money }}</strong></td>
+      </tr>
+
+    </table>
+
+    <div id="checkout"><div><input id="checkout-button" class="btn" type="submit" name="checkout" value="Checkout" /><a href="{{ shop.url }}">Continue Shopping</a></div></div>
+
+  </form>
+
+  
+
+
+
+  {% else %}
+
+  <div id="empty-cart">
+    <a href="{{ store.url }}">This is cart is empty. Keep on keepin' on...</a>
+  </div><!-- #empty-cart -->
+
+  {% endif %} <!-- if cart.item_count > 0  -->
+
+</div><!-- cart -->
+
+

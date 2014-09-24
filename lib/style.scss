@@ -1,0 +1,58 @@
+// VARIABLES
+@import "lib/variables.scss";
+
+
+
+.hide {display: none;}
+
+* {
+	font-size: 100%;
+	color: inherit;
+	font-weight: 400;
+	font-family: inherit;
+	line-height: 1.45em;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+}
+
+body {
+	background: $white url('http://cdn.gprojectgear.com/site/05.jpg') no-repeat center;
+	background-size: cover;
+	color: $dark;
+	// font-family: $gotham;
+	font-family: Montserrat;
+}
+
+.swipe {
+	overflow: hidden;
+	visibility: hidden;
+	position: relative;
+	.swipe-wrap {
+		overflow: hidden;
+		position: relative;
+		> div {
+			float: left;
+			width: 100%;
+			height: 100px;
+			background: red;
+			position: relative;
+		}
+		div:nth-of-type(2) {
+			background: blue;
+		}
+		div:nth-of-type(3) {
+			background: yellow;
+		}
+	}
+
+}

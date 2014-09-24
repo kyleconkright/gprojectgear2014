@@ -1,0 +1,23 @@
+<div class="holder all-products">
+
+  <ul>
+    <h2>Speakers</h2>
+    {% for product in collections.speakers.products %}
+      <li><a href="{{ product.url }}" title="{{ product.title }}"> {% for image in product.images %}{% if image.alt == 'grid' %}<img src="{{ image | product_img_url: 'medium' }}">{% endif %}{% endfor %}<h3>{{ product.title }}</h3></a></li>
+    {% endfor %}
+  </ul>
+
+  <ul>
+    <h2>Shirts</h2>
+    {% for product in collections.apparel.products %}
+      {% if product.tags contains 'shirt' %}
+
+          {% for image in product.images %}{% if image.alt == 'grid' %}<li><a href="{{ product.url }}" title="{{ product.title }}"><img src="{{ image | product_img_url: 'medium' }}"><p>{{ product.title }}</p></a></li>{% endif %}{% endfor %}
+
+      {% endif %}    
+
+
+    {% endfor %}
+  </ul>
+
+</div>

@@ -1,0 +1,12 @@
+<div class="holder page">
+
+ 	<ul id="in-the-press">
+    	{% for article in blogs.reviews.articles  %}
+        	{% if article.tags contains 'reviewpage' %}
+            	{{ article.content }}
+      test
+          	{% endif %} 
+      	{% endfor %}
+	</ul>  
+
+</div>
