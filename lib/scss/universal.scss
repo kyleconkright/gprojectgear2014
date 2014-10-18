@@ -1,0 +1,24 @@
+// VARIABLES
+@import "lib/variables.scss";
+
+.test {
+    background: blue !important;
+    padding: 300px 0 0 0;
+}
+
+//iPhone Landscape
+@media only screen
+and (max-width : 568px)
+and (orientation: landscape) {
+
+
+}
+
+
+//iPhone Portrait
+@media only screen
+and (max-width : 414px)
+and (orientation: portrait) {
+
+
+}

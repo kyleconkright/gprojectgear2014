@@ -26,7 +26,7 @@ body, html {
 }
 
 body {
-	background: $white url('http://cdn.gprojectgear.com/site/05.jpg') no-repeat center;
+	background: $yellow;
 	background-size: cover;
 	color: $dark;
 	// font-family: $gotham;
@@ -43,16 +43,11 @@ body {
 		> div {
 			float: left;
 			width: 100%;
-			height: 100px;
-			background: red;
+			height: 100%;
 			position: relative;
-		}
-		div:nth-of-type(2) {
-			background: blue;
-		}
-		div:nth-of-type(3) {
-			background: yellow;
+			img {
+				width: 100%;
+			}
 		}
 	}
-
 }

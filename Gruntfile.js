@@ -4,21 +4,21 @@ module.exports = function(grunt) {
   	grunt.initConfig({
 	    pkg: grunt.file.readJSON('package.json'),
 
-	    sass: {
-	    	dist: {
-		      	options: {
-		        	style: 'compressed'
-		      	},
-		      	files: {
-		        	'tmp/style.css': 'lib/style.scss',
-                    'tmp/menu.css': 'lib/scss/menu.scss'
-		      	}
-		    }
-		},
+        sass: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'lib/scss',
+                    src: ['*.scss'],
+                    dest: 'tmp/css',
+                    ext: '.css'
+                }]
+            }
+        },
 		cssmin: {
 		  	combine: {
 		    	files: {
-		      		'tmp/stylemin.css': ['lib/vendor/lemonade.css','lib/vendor/slides.css','lib/vendor/magnific.css','lib/vendor/gallery.css','tmp/style.css','tmp/menu.css']
+		      		'tmp/stylemin.css': ['lib/vendor/lemonade.css','lib/vendor/slides.css','lib/vendor/magnific.css','lib/vendor/gallery.css','tmp/css/*.css']
 		    	}
 		  	}
 		},
