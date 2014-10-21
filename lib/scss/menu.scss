@@ -6,6 +6,8 @@ nav#menu {
     height: $spacefix*4;
     color: $white;
     text-transform: uppercase;
+    position: relative;
+    z-index: 9999;
     ul {
         height: $spacefix*4;
         line-height: $spacefix*4;
@@ -86,7 +88,7 @@ and (orientation: portrait) {
 
 //iPhone Landscape
 @media only screen
-and (max-width : 568px)
+and (max-width : 480px)
 and (orientation: landscape) {
 
     body {
@@ -98,6 +100,9 @@ and (orientation: landscape) {
             li.logo {
                 width: 7vw;
             }
+        }
+        ul.social {
+            font-size: 1.25em;
         }
     }
 }
