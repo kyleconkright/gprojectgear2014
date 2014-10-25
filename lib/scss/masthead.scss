@@ -2,48 +2,32 @@
 @import "lib/variables.scss";
 
 
-
-.hide {display: none;}
-
-* {
-	font-size: 100%;
-	color: inherit;
-	font-weight: 900;
-	font-family: inherit;
-	line-height: 1.45em;
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
-	text-decoration: none;
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-body, html {
-	height: 100%;
-}
-
-body {
-	background: $yellow;
-	background-size: cover;
-	color: $dark;
-	// font-family: $gotham;
-	font-family: Montserrat;
-}
-
-.slick {
-	font-size: 4em;
-
-	div {
+#masthead {
+	background: yellow;
+	// height: 94%;
+	width: 100%;
+	position: absolute;
+	.slider {
 		text-align: center;
+		font-size: 4em;
 	}
-	div:nth-of-type(2n) {
-		background: green;
+	.slider-main {
+
+		div {
+			height: 500px;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
 	}
-	div:nth-of-type(2n+1) {
-		background: red;
+	#slider-nav-holder {
+		position: relative;
+		top: -500px;
+		.slider-nav {
+			div {
+				color: $white;
+			}
+		}
 	}
 }
 
@@ -68,9 +52,7 @@ body {
 
 //iPhone 6+ Portrait
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) {
-	body {
-		font-size: 90%;
-	}
+
 }
 
 

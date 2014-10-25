@@ -1,0 +1,17 @@
+#masthead {
+  background: yellow;
+  width: 100%;
+  position: absolute; }
+  #masthead .slider {
+    text-align: center;
+    font-size: 4em; }
+  #masthead .slider-main div {
+    height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
+  #masthead #slider-nav-holder {
+    position: relative;
+    top: -500px; }
+    #masthead #slider-nav-holder .slider-nav div {
+      color: #f6f6f6; }

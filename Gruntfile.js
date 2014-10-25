@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 		cssmin: {
 		  	combine: {
 		    	files: {
-		      		'tmp/stylemin.css': ['lib/vendor/lemonade.css','lib/vendor/slides.css','lib/vendor/magnific.css','lib/vendor/gallery.css','tmp/css/*.css']
+		      		'tmp/stylemin.css': ['lib/vendor/slick.css','tmp/css/*.css']
 		    	}
 		  	}
 		},
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
      	uglify: {
       		my_target: {
       		    files: {
-      		    	'gprojectgear-8514657/assets/script.js.liquid': ['lib/vendor/jquery.js','lib/vendor/shopify.api.jquery.js','lib/vendor/cookie.js', 'lib/vendor/magnific.js','lib/vendor/gallery.js','lib/vendor/swipe.js','lib/vendor/scrollfix.js','tmp/script.js'],
+      		    	'gprojectgear-8514657/assets/script.js.liquid': ['lib/vendor/jquery.js','lib/vendor/shopify.api.jquery.js','lib/vendor/slick.min.js','tmp/script.js'],
       		    }
       		}
 	    },

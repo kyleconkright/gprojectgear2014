@@ -4,7 +4,7 @@
 * {
   font-size: 100%;
   color: inherit;
-  font-weight: 400;
+  font-weight: 900;
   font-family: inherit;
   line-height: 1.45em;
   padding: 0;
@@ -24,17 +24,15 @@ body {
   color: #26272b;
   font-family: Montserrat; }
 
-.swipe {
-  overflow: hidden;
-  visibility: hidden;
-  position: relative; }
-  .swipe .swipe-wrap {
-    overflow: hidden;
-    position: relative; }
-    .swipe .swipe-wrap > div {
-      float: left;
-      width: 100%;
-      height: 100%;
-      position: relative; }
-      .swipe .swipe-wrap > div img {
-        width: 100%; }
+.slick {
+  font-size: 4em; }
+  .slick div {
+    text-align: center; }
+  .slick div:nth-of-type(2n) {
+    background: green; }
+  .slick div:nth-of-type(2n+1) {
+    background: red; }
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+  body {
+    font-size: 90%; } }

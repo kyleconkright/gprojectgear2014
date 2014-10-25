@@ -1,46 +1,49 @@
 // VARIABLES
 @import "lib/variables.scss";
 
+$menuheight: 50px;
+
 nav#menu {
     background: linear-gradient(to bottom, rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 100%);
-    height: $spacefix*4;
     color: $white;
     text-transform: uppercase;
     position: relative;
     z-index: 9999;
+    float: left;
+    width: 100%;
     ul {
-        height: $spacefix*4;
-        line-height: $spacefix*4;
-        padding: 0 $spacefix;
+        padding: 0 $space;
+        margin: $space/2 0;
+        height: $menuheight;
         li {
-            position: relative;
+            line-height: $menuheight;
+            height: 100%;
             display: inline;
-            font-weight: 700;
-            letter-spacing: -.025em;
-            i {
-                opacity: .5;
-                width: 10px;
-                text-align: center;
-            }
+            position: relative;
             > ul {
+                display: none;
                 position: absolute;
                 left: 0;
                 top: $spacefix*1.5;
                 padding: 0;
-                display: none;
                 li {
-                    display: block;
                     white-space: nowrap;
                     padding: $spacefix/4 0;
+                    line-height: 0;
                     a {
-
+                        padding: $spacefix/2 0;
+                        display: block;
                     }
                 }
             }
             a {
-                padding: $spacefix/4 $spacefix/3;
+                padding: $spacefix/4;
+                i {
+                    width: 13px;
+                    text-align: center;
+                }
             }
-            .active {
+            a.active {
                 background: $dark;
                 border-radius: 1px;
                 i {
@@ -48,80 +51,127 @@ nav#menu {
                 }
             }
         }
-        li.logo {
-            background: url('../assets/logo-head.svg') no-repeat center;
-            display: inline-block;
-            float: left;
-            height: 100%;
-            width: 13vw;
-            margin: 0 $spacefix/2 0 0;
-        }
     }
     ul.nav {
+        width: 66%;
         float: left;
-        width: 70%;
+        li.logo {
+            height: 100%;
+            float: left;
+            margin: 0 $space 0 0;
+            img {
+                height: 100%;
+            }
+        }
     }
     ul.social {
+        width: 26%;
         float: right;
-        li {
-
-            a {
-                i {
-                    opacity: 1;
-                }
-            }
-        }
+        text-align: right;
     }
 }
 
+// nav#menu {
+//     background: linear-gradient(to bottom, rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 100%);
+//     height: $spacefix*2.5;
+//     color: $white;
+//     text-transform: uppercase;
+//     position: relative;
+//     z-index: 9999;
+//     ul {
+//         height: $spacefix*2.5;
+//         line-height: $spacefix*2.5;
+//         padding: 0 $spacefix;
+//         margin: $spacefix/2 0;
+//         li {
+//             position: relative;
+//             display: inline;
+//             font-weight: 700;
+//             letter-spacing: -.025em;
+//             i {
+//                 opacity: .5;
+//                 text-align: center;
+//                 width: 10px;
+//             }
+//             > ul {
+//                 position: absolute;
+//                 left: 0;
+//                 top: $spacefix*1.5;
+//                 padding: 0;
+//                 display: none;
+//                 li {
+//                     display: block;
+//                     white-space: nowrap;
+//                     padding: $spacefix/4 0;
+//                     a {
+//
+//                     }
+//                 }
+//             }
+//             a {
+//                 padding: $spacefix/4;
+//             }
+//             .active {
+//                 background: $dark;
+//                 border-radius: 1px;
+//                 i {
+//                     opacity: .75;
+//                 }
+//             }
+//         }
+//         li.logo {
+//             display: inline-block;
+//             float: left;
+//             height: 100%;
+//             margin: 0 $spacefix/2 0 0;
+//             img {
+//                 height: 100%;
+//             }
+//         }
+//     }
+//     ul.nav {
+//         float: left;
+//         width: 70%;
+//     }
+//     ul.social {
+//         float: right;
+//         li {
+//
+//             a {
+//                 i {
+//                     opacity: 1;
+//                     font-size: 1.5em;
+//                     width: auto;
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media only screen
-and (max-width : 980px)
-and (orientation: portrait) {
-
-    body {
-        font-size: 90%;
-    }
-
-}
 
 
-//iPhone Landscape
-@media only screen
-and (max-width : 480px)
-and (orientation: landscape) {
-
-    body {
-        font-size: 90%;
-    }
-    nav#menu {
-        ul.nav {
-
-            li.logo {
-                width: 7vw;
-            }
-        }
-        ul.social {
-            font-size: 1.25em;
-        }
-    }
-}
 
 
-//iPhone Portrait
-@media only screen
-and (max-width : 414px)
-and (orientation: portrait) {
-
-    body {
-
-    }
-    nav#menu {
-        ul.nav {
-            width: 100%;
-        }
-        ul.social {
-            display: none;
-        }
-    }
-}
+// //iPhone 6+ Portrait
+// @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) {
+//     nav#menu {
+//         ul.nav {
+//             width: 75%;
+//         }
+//         ul.social {
+//             font-size: 80%;
+//         }
+//     }
+// }
+//
+// //iPhone 6 Portrait and Down
+// @media only screen and (max-device-width: 667px) and (orientation : portrait) {
+//     nav#menu {
+//         ul.nav {
+//             width: 100%;
+//         }
+//         ul.social {
+//             display: none;
+//         }
+//     }
+// }

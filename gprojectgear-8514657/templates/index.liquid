@@ -1,13 +1,1 @@
-{% include 'menu' %}
-
-<div id='slider' class='swipe'>
-    <div class='swipe-wrap'>
-        {% for product in collections.speakers.products %}
-            {% for image in product.images %}
-                {% if image.alt contains 'grid' %}
-                    <div><img src="{{ image | product_img_url: 'large' }}"></div>
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
-    </div>
-</div>
+{% include 'masthead' %}
