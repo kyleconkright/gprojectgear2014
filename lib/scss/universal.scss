@@ -1,7 +1,14 @@
 // VARIABLES
 @import "lib/variables.scss";
 
-
+.btn {
+    padding: $spacefix/2 $spacefix;
+    display: inline-block;
+    border-radius: 2px;
+    color: $white;
+    background: $dark;
+    text-transform: uppercase;
+}
 
 //iPhone Landscape
 @media only screen

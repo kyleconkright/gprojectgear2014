@@ -22,7 +22,7 @@
       fade: true,
       asNavFor: '.slider-nav'
     });
-    return $('.slider-nav').slick({
+    $('.slider-nav').slick({
       dots: true,
       arrows: false,
       draggable: false,
@@ -50,6 +50,10 @@
           }
         }
       ]
+    });
+    return $('a.btn').on('click', function(event) {
+      event.preventDefault();
+      return $('.slider').slickNext();
     });
   });
 

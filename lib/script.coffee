@@ -51,3 +51,7 @@ $ ->
             }
         }]
     });
+
+    $('a.btn').on 'click', (event) ->
+        event.preventDefault();
+        $('.slider').slickNext();

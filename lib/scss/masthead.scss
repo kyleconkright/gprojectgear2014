@@ -2,30 +2,81 @@
 @import "lib/variables.scss";
 
 
-#masthead {
-	background: yellow;
-	// height: 94%;
-	width: 100%;
-	position: absolute;
-	.slider {
-		text-align: center;
-		font-size: 4em;
-	}
-	.slider-main {
+// #masthead {
+// 	background: yellow;
+// 	height: 100vh;
+// 	width: 100%;
+// 	position: absolute;
+// 	.slider {
+// 		text-align: center;
+// 		font-size: 4em;
+// 	}
+// 	.slider-main {
+//
+// 		div {
+// 			height: 100vh;
+// 			background-size: cover;
+// 			background-repeat: no-repeat;
+// 			background-position: center;
+// 		}
+// 	}
+// 	#slider-nav-holder {
+// 		position: relative;
+// 		top: -100vh;
+// 		height: 100vh;
+// 		.slider-nav {
+// 			padding: 0;
+// 			div {
+// 				color: $white;
+// 				height: 100vh;
+// 			}
+// 		}
+// 	}
+// }
 
+#masthead {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	.slider-main {
+		height: 100%;
 		div {
-			height: 500px;
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
+			height: 100%;
 		}
 	}
 	#slider-nav-holder {
-		position: relative;
-		top: -500px;
+		background: rgba(250,250,0,.65);
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
 		.slider-nav {
-			div {
-				color: $white;
+			height: 90vh;
+			div.product-info, div.masthead_copy {
+				padding: 100px 50px;
+				img {
+					height: 100px;
+				}
+				h1 {
+					color: white;
+					font-weight: 300;
+					font-size: 5em;
+					font-family: gotham;
+				}
+			}
+			div.masthead_copy {
+				h1 {
+					text-align: center;
+					text-transform: uppercase;
+					line-height: 1;
+					padding: 20px 0 0;
+				}
+				a.btn {
+					font-size: .5em;
+				}
 			}
 		}
 	}

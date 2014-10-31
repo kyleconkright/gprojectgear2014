@@ -1,14 +1,12 @@
-<!-- <div id="masthead">
-    <div class="slider">
-        {% for product in collections.speakers.products %}
-            <div class="{{product.handle}}"><h1>{{ product.title }}</h1></div>
-        {% endfor %}
-    </div>
-</div> -->
-
 <div id="masthead">
     <div class="slider slider-main">
+
         {% for product in collections.speakers.products %}
+            {% if settings.use_masthead_bg %}
+                <div class="masthead_copy">
+                    <img src="{{ 'masthead_bg.png' | asset_url }})">
+                </div>
+            {% endif %}
             {% for image in product.images %}
                 {% if image.alt contains 'masthead' %}
                     <div class="{{product.handle}}" style="background-image: url('{{ image | product_img_url: 'master' }}')"></div>
@@ -19,8 +17,22 @@
 
     <div id="slider-nav-holder">
         <div class="slider slider-nav">
+            {% if settings.use_masthead_copy %}
+                <div class="masthead_copy">
+                    <div><h1>{{ settings.masthead_copy }}</h1></div>
+                </div>
+            {% endif %}
+
             {% for product in collections.speakers.products %}
-                <div class="{{product.handle}}"><h1>{{ product.title }}</h1></div>
+                <div class="{{product.handle}} product-info">
+                    <div>
+                        <h1>{{ product.title }}</h1>
+                        <p>{{ product.description }}</p>
+                        <a href="#" class="btn">Reviews</a>
+                        <a href="#" class="btn">Video</a>
+                        <a href="#" class="btn">Photos</a>
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>
