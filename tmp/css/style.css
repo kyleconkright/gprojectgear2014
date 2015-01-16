@@ -24,14 +24,10 @@ body {
   color: #26272b;
   font-family: Montserrat; }
 
-.slick {
-  font-size: 4em; }
-  .slick div {
-    text-align: center; }
-  .slick div:nth-of-type(2n) {
-    background: green; }
-  .slick div:nth-of-type(2n+1) {
-    background: red; }
+#test {
+  min-height: 200px;
+  background: teal;
+  color: #f6f6f6; }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   body {

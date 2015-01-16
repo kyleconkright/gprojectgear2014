@@ -16,41 +16,63 @@ $ ->
 
 
     $('.slider-main').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.slider-nav'
-    });
-
-    $('.slider-nav').slick({
         dots: true,
         arrows: false,
         draggable: false,
         infinite: true,
         speed: 300,
         centerMode: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        asNavFor: '.slider-main'
+        centerPadding: '200px',
+        slidesToShow:  1,
+        slidesToScroll: 1
         responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                swipeToSlide: true,
-                infinite: true,
-                dots: true
-            }
-        },
-        {
-            breakpoint: 414,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }]
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    swipeToSlide: true,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 414,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: false
+                }
+            }]
     });
+
+    # $('.slider-nav').slick({
+    #     dots: true,
+    #     arrows: false,
+    #     draggable: false,
+    #     infinite: true,
+    #     speed: 300,
+    #     centerMode: true,
+    #     slidesToShow: 1,
+    #     slidesToScroll: 1,
+    #     asNavFor: '.slider-main'
+    #     responsive: [{
+    #         breakpoint: 1024,
+    #         settings: {
+    #             slidesToShow: 1,
+    #             slidesToScroll: 1,
+    #             swipeToSlide: true,
+    #             infinite: true,
+    #             dots: true
+    #         }
+    #     },
+    #     {
+    #         breakpoint: 414,
+    #         settings: {
+    #             slidesToShow: 1,
+    #             slidesToScroll: 1
+    #         }
+    #     }]
+    # });
 
     $('a.btn').on 'click', (event) ->
         event.preventDefault();

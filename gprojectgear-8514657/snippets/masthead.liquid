@@ -1,4 +1,4 @@
-<div id="masthead">
+<!-- <div id="masthead">
     <div class="slider slider-main">
 
         {% for product in collections.speakers.products %}
@@ -35,5 +35,21 @@
                 </div>
             {% endfor %}
         </div>
+    </div>
+</div> -->
+
+<div id="masthead">
+    <div class="slider slider-main">
+        {% for product in collections.speakers.products %}
+        <div class="{{product.handle}} product-info">
+            <div>
+                <h1>{{ product.title }}</h1>
+                <p>{{ product.description }}</p>
+                <a href="#" class="btn">Reviews</a>
+                <a href="#" class="btn">Video</a>
+                <a href="#" class="btn">Photos</a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>

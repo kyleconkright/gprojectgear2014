@@ -16,22 +16,15 @@
       }
     });
     $('.slider-main').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      fade: true,
-      asNavFor: '.slider-nav'
-    });
-    $('.slider-nav').slick({
       dots: true,
       arrows: false,
       draggable: false,
       infinite: true,
       speed: 300,
       centerMode: true,
+      centerPadding: '200px',
       slidesToShow: 1,
       slidesToScroll: 1,
-      asNavFor: '.slider-main',
       responsive: [
         {
           breakpoint: 1024,
@@ -46,7 +39,8 @@
           breakpoint: 414,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            centerMode: false
           }
         }
       ]

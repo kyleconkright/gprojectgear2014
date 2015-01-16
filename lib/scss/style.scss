@@ -33,18 +33,10 @@ body {
 	font-family: Montserrat;
 }
 
-.slick {
-	font-size: 4em;
-
-	div {
-		text-align: center;
-	}
-	div:nth-of-type(2n) {
-		background: green;
-	}
-	div:nth-of-type(2n+1) {
-		background: red;
-	}
+#test {
+	min-height: 200px;
+	background: teal;
+	color: $white;
 }
 
 
